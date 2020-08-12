@@ -13,10 +13,8 @@ const image = require('./controllers/image');
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-elliptical-66776',
-    user : 'postgres',
-    password : '123321123321',
-    database : 'facedb'
+    host : process.env.DATABASE_URL,
+    ssl:true
   }
 });
 
